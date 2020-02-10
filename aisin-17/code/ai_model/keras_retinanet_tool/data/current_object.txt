@@ -1,0 +1,19 @@
+person,0
+bicycle,1
+car,2
+motorcycle,3
+traffic light,4
+traffic sign,5
+parking meter,6
+u-shaped barricade,7
+short pole,8
+safety cone,9
+construction barricade,10
+parking block,11
+shopping cart,12
+tricycle,13
+stroller,14
+wheelchair,15
+other compact ride,16
+locked parking barrier,17
+unlocked parking barrier,18
