@@ -45,7 +45,7 @@ def main():
         # print(scores)
         # print(labels)
         make_xml_annotation(boxes[0], scores[0], labels[0], img, xml_path)
-        break
+        # break
 
 
 if __name__ == '__main__':
