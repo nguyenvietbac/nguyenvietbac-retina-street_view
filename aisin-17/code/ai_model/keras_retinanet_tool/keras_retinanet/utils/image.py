@@ -22,6 +22,32 @@ from PIL import Image
 from .transform import change_transform_origin
 
 
+def convert_to_big(bound_smalls, type = 1):
+    out_bound = []
+    for bound_small in bound_smalls[0]:
+        # print(bound_small)
+        xmi = bound_small[0]
+        ymi = bound_small[1]
+        xma = bound_small[2]
+        yma = bound_small[3]
+        if type == 1:
+            ymi += 200
+            yma += 200
+        elif type == 2:
+            ymi += 200
+            yma += 200
+            xmi += 350
+            xma += 350
+        elif type == 3:
+            ymi += 200
+            yma += 200
+            xmi += 1280-580
+            xma += 1280-580
+        out_bound.append([xmi, ymi, xma, yma])
+        # print(len(out_bound))
+    return np.array([out_bound])
+
+
 def read_image_bgr(path, slide_window=False):
     """ Read an image in BGR format.
 
@@ -35,14 +61,17 @@ def read_image_bgr(path, slide_window=False):
             im = im.crop((0, 200, 580, 550))
             # im.show()
             image = np.asarray(im)
+            # print(image.shape)
         elif slide_window == 2:
             im = im.crop((350, 200, 350+580, 550))
             # im.show()
             image = np.asarray(im)
+            # print(image.shape)
         else:
             im = im.crop((1280-580, 200, 1280, 550))
             # im.show()
             image = np.asarray(im)
+            # print(image.shape)
         # print(image)
         return image[:, :, ::-1].copy()
     else:

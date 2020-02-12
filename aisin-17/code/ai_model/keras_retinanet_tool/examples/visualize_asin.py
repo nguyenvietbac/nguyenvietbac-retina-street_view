@@ -63,13 +63,15 @@ def read_content(xml_file: str):
 # img = 'FR_20190703194758_0000060.jpeg'
 # pa = 'FR_20190305140226_0000361.xml'
 # img = 'FR_20190305140226_0000361.jpeg'
-pa = 'FR_20180409135610_0000013.xml'
-img = 'FR_20180409135610_0000013.jpeg'
+pa = 'all.xml'
+# pa = 'FR_20190630094813_0000210.xml'
+img = 'FR_20190630094813_0000210.jpeg'
 image = cv2.imread(img)
 # read_content(pa)
 n, ba, na = parsexml(pa)
 # print(b)
 count = 0
+print(len(ba))
 for b, n in zip(ba, na):
     image = cv2.rectangle(image, (b[0], b[1]), (b[2], b[3]), (255, 0, 0), 2)
     cv2.imshow('demo', image)
