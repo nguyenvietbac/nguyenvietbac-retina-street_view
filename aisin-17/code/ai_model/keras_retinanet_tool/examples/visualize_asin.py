@@ -63,7 +63,7 @@ def read_content(xml_file: str):
 # img = 'FR_20190703194758_0000060.jpeg'
 # pa = 'FR_20190305140226_0000361.xml'
 # img = 'FR_20190305140226_0000361.jpeg'
-pa = 'all.xml'
+pa = 'nms.xml'
 # pa = 'FR_20190630094813_0000210.xml'
 img = 'FR_20190630094813_0000210.jpeg'
 image = cv2.imread(img)

@@ -32,7 +32,7 @@ def read_classes(file):
     return result
 
 
-def make_xml_annotation(boxes, scores, labels, img_name, xml_path):
+def make_xml_annotation(boxes, scores, labels, img_name, xml_path, confident_threshold):
     zind = 0
     map_label = read_classes('../data/current_object.txt')
 
@@ -55,7 +55,7 @@ def make_xml_annotation(boxes, scores, labels, img_name, xml_path):
     f.write(line)
     ind = 0
     for bx, sc, la in zip(boxes, scores, labels):
-        if sc < 0.5:
+        if sc < confident_threshold:
             continue
         # print(la)
         line = '\n\t<object>'
